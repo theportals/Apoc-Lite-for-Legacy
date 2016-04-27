@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\options\character.res
+#String pr
+
+#uint16 pver
+2
+#String name
+Character Sheet
+#String preq
+
+#uint16 hk
+104
+#uint16 ad length
+2
+#String ad[0]
+@
+#String ad[1]
+character

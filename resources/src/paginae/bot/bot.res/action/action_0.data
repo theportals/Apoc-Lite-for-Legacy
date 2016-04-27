@@ -1,0 +1,13 @@
+#ABUTTON LAYER FOR RES decode//\paginae\bot\bot.res
+#String pr
+
+#uint16 pver
+2
+#String name
+Bot
+#String preq
+
+#uint16 hk
+98
+#uint16 ad length
+0

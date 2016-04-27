@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\bot\plm.res
+#String pr
+paginae/bot/bot
+#uint16 pver
+2
+#String name
+Set Position LandMark
+#String preq
+
+#uint16 hk
+46
+#uint16 ad length
+2
+#String ad[0]
+@
+#String ad[1]
+botplm

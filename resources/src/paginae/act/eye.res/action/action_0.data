@@ -1,0 +1,15 @@
+#ABUTTON LAYER FOR RES decode//\paginae\act\eye.res
+#String pr
+paginae/act/fsm
+#uint16 pver
+2
+#String name
+Eye of Jorb The Sadist
+#String preq
+
+#uint16 hk
+121
+#uint16 ad length
+1
+#String ad[0]
+godinfo

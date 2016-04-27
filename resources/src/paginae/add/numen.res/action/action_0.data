@@ -1,0 +1,19 @@
+#ABUTTON LAYER FOR RES decode//\paginae\add\numen.res
+#String pr
+paginae/act/add
+#uint16 pver
+2
+#String name
+Numen
+#String preq
+
+#uint16 hk
+0
+#uint16 ad length
+3
+#String ad[0]
+@
+#String ad[1]
+numen
+#String ad[2]
+

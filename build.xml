@@ -1,0 +1,176 @@
+<?xml version="1.0" ?>
+
+<project name="haven" default="deftgt">
+  <target name="build-env">
+    <mkdir dir="build" />
+    <mkdir dir="build/classes" />
+    <mkdir dir="build/belts" />
+    <mkdir dir="build/cave" />
+    <mkdir dir="build/config" />
+    <mkdir dir="build/custom_res/gfx" />
+    <mkdir dir="build/custom_wav" />
+    <mkdir dir="build/map" />
+    <mkdir dir="build/screenshots" />
+    <mkdir dir="build/simplemap" />
+    <mkdir dir="build/scripts" />
+    <available property="has-res-jar" file="build/haven-res.jar" />
+    <available property="has-buildinfo" file="build/classes/buildinfo" />
+    <available property="unpacked-lib" file="build/classes-lib" />
+  </target>
+  
+  <target name="buildinfo" depends="build-env" unless="has-buildinfo">
+    <exec executable="git" outputproperty="gitrev" failifexecutionfails="false">
+      <arg line="rev-parse HEAD" />
+    </exec>
+    <echo file="build/classes/buildinfo" xml:space="default">
+      git-rev = ${gitrev}
+    </echo>
+  </target>
+	
+  <target name="resources">
+	  	<exec executable="java" failifexecutionfails="false">
+	  	  <arg line="-jar resources/LayerUtil.jar -re resources/src build/res" />
+	  	</exec>
+  </target>
+
+  <target name="haven-client" depends="build-env">
+    <javac srcdir="src" destdir="build/classes" debug="on"
+	   source="1.5" target="1.5" includeantruntime="no">
+        <classpath>
+            <pathelement path="lib/gluegen-rt-natives-macosx-universal.jar" />
+            <pathelement path="lib/gluegen-rt-natives-windows-amd64.jar" />
+            <pathelement path="lib/gluegen-rt-natives-windows-i586.jar" />
+            <pathelement path="lib/gluegen-rt.jar" />
+            <pathelement path="lib/jnlp.jar" />
+            <pathelement path="lib/jogg.jar" />
+            <pathelement path="lib/jogl-all-natives-macosx-universal.jar" />
+            <pathelement path="lib/jogl-all-natives-windows-amd64.jar" />
+            <pathelement path="lib/jogl-all-natives-windows-i586.jar" />
+            <pathelement path="lib/jogl-all.jar" />
+            <pathelement path="lib/jogl.jar" />
+            <pathelement path="lib/jorbis.jar" />
+            <pathelement path="lib/haven-res.jar" />
+        </classpath>
+      <compilerarg value="-Xlint:unchecked" />
+      <!-- <compilerarg value="-Xbarda" /> -->
+    </javac>
+    <copy todir="build/classes/haven" file="etc/ressrv.crt" />
+    <copy todir="build/classes/haven" file="etc/authsrv.crt" />
+    <copy todir="build/classes/haven" file="etc/res-preload" />
+    <copy todir="build/classes/haven" file="etc/res-bgload" />
+    <copy todir="build/classes/haven" file="etc/icon.png" />
+    <mkdir dir="build/res" />
+    <copy todir="build/config" >
+    <fileset file="changelog.txt"/>
+    <fileset file="craft.conf"/>
+    <fileset file="curio.conf"/>
+    <fileset file="fep.conf"/>
+    <fileset file="haven.conf"/>
+    <fileset file="highlight.cfg"/>
+    <fileset file="highlight.conf"/>
+    <fileset file="smileys.conf"/>
+    <fileset file="sound.conf"/>
+    <fileset file="windows.conf"/>
+    </copy>
+    <copy todir="build/cave">
+    <fileset file="resources/cave/currentsession.js"/>
+    <fileset file="resources/cave/map.html"/>
+    </copy>
+    <mkdir dir="build/custom_res/gfx/arch/walls" />
+    <copy todir="build/custom_res/gfx/arch/walls">
+    <fileset file="resources/custom_res/gfx/arch/walls/*.res"/>
+    </copy>
+    <mkdir dir="build/custom_res/gfx/terobjs/bumlings" />
+    <copy todir="build/custom_res/gfx/terobjs/bumlings" file="resources/custom_res/gfx/terobjs/bumlings/03.res"/>
+    <copy todir="build/custom_res/gfx/terobjs">
+    <fileset file="resources/custom_res/gfx/terobjs/blood.res"/>
+    <fileset file="resources/custom_res/gfx/terobjs/cheeserack.res"/>
+    <fileset file="resources/custom_res/gfx/terobjs/cupboard.res"/>
+    </copy>
+    <copy todir="build/custom_wav">
+    <fileset dir="resources/custom_wav"/>
+    </copy>
+    <copy todir="build/map">
+    <fileset file="resources/map/currentsession.js"/>
+    <fileset file="resources/map/map.html"/>
+    </copy>
+    <copy todir="build/simplemap" file="resources/simplemap/currentsession.js"/>
+    <copy todir="build" file="run.bat"/>
+    <copy todir="build/scripts">
+    <fileset dir="scripts"/>
+    </copy>
+  </target>
+  
+  <target name="appletview" depends="build-env">
+    <copy file="etc/applet.html" todir="build" />
+  </target>
+
+  <target name="lib-classes" depends="build-env" unless="unpacked-lib">
+    <mkdir dir="build/classes-lib" />
+    <unjar src="lib/jogg.jar" dest="build/classes-lib">
+      <patternset excludes="META-INF/**" />
+    </unjar>
+    <unjar src="lib/jorbis.jar" dest="build/classes-lib">
+      <patternset excludes="META-INF/**" />
+    </unjar>
+  </target>
+
+  <target name="jar" depends="haven-client,buildinfo,lib-classes,resources">
+    <jar destfile="build/haven.jar" update="true">
+      <fileset dir="build/classes" excludes="*.class"/>
+      <fileset dir="build/classes-lib" />
+      <manifest>
+          <attribute name="Main-Class" value="haven.MainFrame" />
+          <attribute name="Class-Path" value="haven-res.jar gluegen-rt-natives-macosx-universal.jar gluegen-rt-natives-windows-amd64.jar gluegen-rt-natives-windows-i586.jar gluegen-rt.jar jnlp.jar jogg.jar jogl-all-natives-macosx-universal.jar jogl-all-natives-windows-amd64.jar jogl-all-natives-windows-i586.jar jogl-all.jar jogl.jar jorbis.jar" />
+      </manifest>
+    </jar>
+    <chmod file="build/haven.jar" perm="a+x" />
+  </target>
+  
+  <target name="res-jar" depends="build-env" unless="has-res-jar">
+    <get src="http://legacy.havenandhearth.com/java/haven-res.jar" dest="lib/haven-res.jar"
+	 usetimestamp="true" />
+  </target>
+  
+  <target name="jars" depends="build-env, jar, res-jar">
+    <copy todir="build">
+      <fileset dir="lib">
+          <include name="haven-res.jar" />
+          <include name="gluegen-rt-natives-macosx-universal.jar" />
+          <include name="gluegen-rt-natives-windows-amd64.jar" />
+          <include name="gluegen-rt-natives-windows-i586.jar" />
+          <include name="gluegen-rt.jar" />
+          <include name="jnlp.jar" />
+          <include name="jogg.jar" />
+          <include name="jogl-all-natives-macosx-universal.jar" />
+          <include name="jogl-all-natives-windows-amd64.jar" />
+          <include name="jogl-all-natives-windows-i586.jar" />
+          <include name="jogl-all.jar" />
+          <include name="jogl.jar" />
+          <include name="jorbis.jar" />
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="deftgt" depends="jars, appletview" />
+
+  <target name="run" depends="jars">
+    <java jar="build/haven.jar" fork="true" />
+  </target>
+  
+  <target name="clean">
+    <delete dir="build/classes" />
+    <delete dir="build/classes-lib" />
+  </target>
+  
+  <target name="profile" depends="jars">
+    <nbprofiledirect>
+    </nbprofiledirect>
+      <java fork="true" jar="build/haven.jar">
+        <jvmarg value="${profiler.info.jvmargs.agent}" />
+        <sysproperty key="haven.dbtext" value="on" />
+        <sysproperty key="haven.defserv" value="sh.seatribe.se" />
+        <sysproperty key="haven.resdir" value="/home/fredrik/src/haven/res" />
+      </java>
+  </target>
+</project>

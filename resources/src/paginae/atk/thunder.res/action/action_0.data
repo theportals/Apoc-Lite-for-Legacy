@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\atk\thunder.res
+#String pr
+paginae/atk/mv
+#uint16 pver
+1
+#String name
+Call down the Thunder
+#String preq
+
+#uint16 hk
+84
+#uint16 ad length
+2
+#String ad[0]
+atk
+#String ad[1]
+thunder

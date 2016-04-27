@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\options\kinlist.res
+#String pr
+
+#uint16 pver
+2
+#String name
+Kinlist
+#String preq
+
+#uint16 hk
+107
+#uint16 ad length
+2
+#String ad[0]
+@
+#String ad[1]
+kinlist

@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\atk\bluethunder.res
+#String pr
+paginae/atk/mv
+#uint16 pver
+1
+#String name
+Call down the Blue Thunder
+#String preq
+
+#uint16 hk
+108
+#uint16 ad length
+2
+#String ad[0]
+atk
+#String ad[1]
+bluethunder

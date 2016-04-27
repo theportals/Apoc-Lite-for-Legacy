@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\atk\berserk.res
+#String pr
+paginae/atk/mv
+#uint16 pver
+1
+#String name
+Charge!
+#String preq
+
+#uint16 hk
+104
+#uint16 ad length
+2
+#String ad[0]
+atk
+#String ad[1]
+berserk

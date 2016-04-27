@@ -1,0 +1,187 @@
+﻿Change log
+ 26.04.16
+ *Remade haven.jar to include all necessary JOGL files, removing the need for a custom installation
+ *Made building the source code through ant much easier and more effective
+ *Overall, the client WORKS now!
+
+ 13.02.16
+ * Changed res URL from www.havenandhearth.com/res to legacy.havenandhearth.com/res
+ * Added .res files for custom commands
+ 
+ 28.01.15
+ * Fixed a typing bug that caused double type events
+ 
+ 27.01.15
+ * Updated client to newer version of openGL
+ * Added kritter highlights and minimap icons
+ * Added double click on ground, auto targets closest target in combat
+ * Added Multi Hotkey combat moves in same belt slot
+ * Added Overview for easier targeting and aggroing
+ * Added auto crinimal on login
+ * Added sound for finished timers
+ * Added few useful hotkeys including
+   - Right Mouse Button for disabling auto cast on single tap
+   - Ctrl click objects for lifting said object (optional)
+   - Space to teleport to Hearth fire (optional)
+   - Ctrl + Space to teleport to Village
+ * Added hotkey to expand personal claim faster using Ctrl or Shift
+ * Added default hotkey for recetting to a preset hotkey setup
+ * Added a strange requested feature for calling WORLD STAR in fights
+ * Moved belt files into belts folder
+ * Moved config files into config folder
+ * Moved jogl files into lib folder
+ * Fixed critical hidden background windows that caused ban from server after death
+ * Fixed flask hotkey for qwerty bar
+ * Fixed a few combat hotkey bugfixes
+ 
+ 15.10.14
+ * Added text selection in text fields.
+ * Added Shift + LMB for rally points when traveling in a boat.
+ * Added kin search.
+ * Added small numen window.
+ * Fixed few other bugs.
+ 
+ 17.08.14
+ * Fixed the animal maiting animation.
+ * Fixed a bug that caused crashes to login screen.
+ * Fixed other fep, craft and curio info.
+ * Changed hotkey for miner safety from Ctrl + S to Ctrl + Z as it interfered with other hotkeys.
+ 
+ 15.08.14
+ * Fixed the tracking bug where it sometimes showed incorrect direction going east.
+ * Fixed the tracking numbers so they show proper degrees now.
+ * Added broadcast tracking to other Apoc clients, broadcast is sent to the current chat so you can even send it privately. Small downside is that your location will determine the tracking pie so don't move around or the broadcast pie will end up offset from your own.
+ * Added different hitbox color options for crops.
+ * Added a transparency meter to hitbox colors.
+ * Added URL linking in chat. This way any URL links starting with "http://", "https://" or "www." will auto detect as URL links and can be clicked to open in an external browser.
+ * Added chat logging to save all chat logs in a folder found in the main directory similar to maps.
+ * Added quick sorting of seeds in seedbags by Shift + Ctrl + Alt + RMB on a seedbag inside the inventory.
+ * Added quick seed extractions from seedbags by + RMB on a seedbag inside the inventory. Make sure to reopen the window you want to extract into after seedbags have been opened.
+ * Changed hotkeys around too
+    + Ctrl + Alt + RMB drop all items with similar names.
+    + Alt + RMB or LMB will transfer items with same name to or from the inventory, RMB or LMB will transfer with highest or lowest quality first.
+ * Added more togglable options in the options menu.
+ * Added an option to revert to custom neg incase hitboxes are not displayed correctly.
+ * Added option to disable flavobjes.
+ * Fixed varies bugs relating to incorrect cheese timers.
+ * Fixed a few build descriptions.
+ 
+ 
+ 
+ 07.07.14
+ * Added auto landscaping for harvesting crops, paving stone, turning grass and stumping mudflat over a selected area.
+ * Added auto feasting food on a table. Note the foods will be eaten from left column to right column.
+ * Added automated log out after 100% tea buff.
+ * Added drying time on items in a herbalist table.
+ * Added timers on cheese in cheese racks.
+ * Fixed more accurate curio timers.
+ * Added auto dropping of ore and junk curios during mining.
+ * Added a toggle option to turn of auto drinking so automated flask refilling can be used.
+ * Fixed more accurate buff icons. Tracking, criminal and swimming should now be properly synced with server.
+ * Added a new option of combat display.
+ 
+ 
+ 
+ 16.05.14
+ * Made a separate combat tab in the options window and moved check boxes around.
+ * Added a volume control for alerts.
+ * Added accurate max damage to all weapons, note the damage can be off by 1 damage because of rounding.
+ * Added a feature to scroll through combat targets with mouse scroll wheal while holding shift key down.
+ * Added a toggleable option to force drink from the flask when switching targets and having any moves on a target. This will break combat moves on a target making it easier to switch targets. Note that its vital to have the correct flask key in the options menu hot keyed or this will not trigger.
+ * Added a very popular request to make first flower action easy accessed. Holding shift will auto-click the first flower option instead of closing the flower menu making spam right click on different objects easily access the desired flower action. The flower action will not automatically queue, the 2nd right click will trigger it. Note that in some instances undesirable flower options can be chosen automatically because of this.
+ * Fixed a few bugs and removed a few exceptions that caused crashes.
+ * Fixed a few missing food and curio information's that wasn't showing.
+ 
+ 
+ 
+ 04.05.14
+ * Fixed the hitboxes for good this time.
+ * Added the qwerty bar. Note that the qwerty bar will disable the hotkeys found in the same keys on the keyboard. It can also be removed from the options window.
+ * Added a checkbox for enabling and disabling sound ID memorizing as well as a button to clear the IDs. This checkbox will basically make it so the same target wont repeatedly play a sound when walking in and out of the view distance and the button will remove the IDs that it has memorized so the sounds will be played again when the same object shows up. Warning! Take caution disabling sounds outside of combat as snipers can take advantage of it.
+ * Added both village claim and personal claim memorizing. The client will remember what state it was in even after reboot.
+ * Added speed memorizing similar to above.
+ * Fixed the blood hitbox showing up when not needing to.
+ * Added a secret feature.
+ 
+ 
+ 
+ 19.03.14
+ * Fixed the custom res hitbox problem
+ * Added popular custom res files in the "custom_res" folder
+ 
+ 
+ 
+ 17.02.14
+ * Renamed client to Apoc lite
+ * Added auto hearthing to village instead of hearth fire.
+ * Added a pink color to female silk moths.
+ * Added a full hide mechanic in the options menu.
+ * Added a color scroll bar for changing the color of hitboxes.
+ * Added a focus hide button for hover and hide of individual res objects.
+ * Added animal tagging using Alt + S to tag and Shift + S to untag domesticated animals.
+ * Added disabling of map saving.
+ * Added server grids toggled with Shift + G and red lines on regular grids to show map grid lines.
+ * Added sound alerts through various world object appearances, aggro mechanics, deaths of characters and pearl crafting notifications.
+ * Fixed view box on minimap showing true view box based on server grids.
+ * Fixed hitbox corrected res files. 
+ 
+ 
+ 
+ 25.01.14
+ * Added single button combat action, hold shift to cancel auto attack for manual attack.
+ * Added mini combat info on top of targets.
+ * Added auto tracking on login.
+ 
+ 
+ 
+ 19.01.14
+ * Added pink rams.
+ * Added barter stand quick item output. Use Alt + RMB on the items to extract.
+ * Added player lines based on kiln color.
+ * Added Soft HP combat damage on top combat portrait
+ * Stole flask meters from romovs client ¦] 
+ * Added LP per hour on both curios and in the study window.
+ * Added memorizing night vision and hide objects.
+ * Ctrl + Home forces windows into view distance.
+ * Added 3 different types of targeting markers for combat.
+ * Added percentages of damage on objects.
+ * Added check boxes to options menu so most things can be toggled on or off.
+ * Added the satellite features to options window. USE WITH CARE!
+ * Fixed login bugs
+ * Fixed F10 and Alt relating to Windows useres.
+ 
+ 
+ 
+ 24.12.13
+ * Added a fully supporting multi char and auto login feature.
+ * Added buttons for Auto Drinking, Miner Safety and Pickup Items.
+ * Added an adjustable key to connection of the auto flask.
+ * Other general bug fixes regarding combat crashes and login crashes.
+ 
+ 
+ 
+ 19.11.13
+ * Added automated flask drinking
+ * Added mining safety
+ * Added double tap on combat moves auto casting on top most combat image
+ * Added quick pickup script to pickup items from the ground
+ 
+ 
+ 
+ 26.09.13
+ * Added mufflan and auraches in the minimap.
+ * Removed the annoying animal circles around animals, except on boars and bears.
+ * Added a hide blood, ridges, village idols and mining supports to the hide objects menu.
+ * Auto sliders, to move your belief sliders.
+ 
+ 
+ 
+ 20.09.13
+ * Alt + Right click on items - Transfers selected items with that exact name (i.e. items that are exactly the same) from inventory to container or vice versa.
+ * Right click on the ISBox to instantly transfer items into a sign. ISBox is the small box in the build menu with individual material types.
+ * Shift Right click on the ISBox to instantly transfer items out of a sign.
+ * Alt + Shift move around - By holding Alt + Shift you can now move around holding items on the mouse cursor.
+ * Added three check boxes in the Options menu:
+    1. Edged tiles giving edged tiles (increases FPS slightly).
+    2. Open game on max window on start up or without.
+    3. Fix for the broad leaf tiles.

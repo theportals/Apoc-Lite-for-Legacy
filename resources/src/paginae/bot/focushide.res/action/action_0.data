@@ -1,0 +1,17 @@
+#ABUTTON LAYER FOR RES decode//\paginae\bot\focushide.res
+#String pr
+paginae/bot/bot
+#uint16 pver
+2
+#String name
+Set P1
+#String preq
+
+#uint16 hk
+44
+#uint16 ad length
+2
+#String ad[0]
+@
+#String ad[1]
+focushide

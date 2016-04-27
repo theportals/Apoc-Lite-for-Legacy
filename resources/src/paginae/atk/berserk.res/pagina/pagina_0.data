@@ -1,0 +1,3 @@
+#PAGINA LAYER FOR RES decode//\paginae\atk\berserk.res
+#String text
+Weight: $img[gfx/hud/charsh/unarmed]\n\n$img[gfx/hud/combat/off] +3%  $img[gfx/hud/combat/def] -8%  $img[gfx/hud/combat/ip] +1\n

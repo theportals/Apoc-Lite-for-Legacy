@@ -1,0 +1,19 @@
+#ABUTTON LAYER FOR RES decode//\paginae\act\options.res
+#String pr
+
+#uint16 pver
+2
+#String name
+Options
+#String preq
+
+#uint16 hk
+111
+#uint16 ad length
+3
+#String ad[0]
+@
+#String ad[1]
+option
+#String ad[2]
+

@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.9.6
+Created-By: 1.8.0_73-b02 (Oracle Corporation)
+Main-Class: haven.MainFrame
+Class-Path: gluegen-rt-natives-macosx-universal.jar gluegen-rt-natives-windows-amd64.jar gluegen-rt-natives-windows-i586.jar gluegen-rt.jar haven-res.jar jnlp.jar jogg.jar jogl-all-natives-macosx-universal.jar jogl-all-natives-windows-amd64.jar jogl-all-natives-windows-i586.jar jogl-all.jar jogl.jar jorbis.jar
